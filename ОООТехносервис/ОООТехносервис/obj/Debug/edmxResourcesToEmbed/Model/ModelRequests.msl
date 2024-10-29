@@ -92,6 +92,7 @@
     <EntitySetMapping Name="Request_View">
       <EntityTypeMapping TypeName="DBVakulenkoRequests413Model.Request_View">
         <MappingFragment StoreEntitySet="Request_View">
+          <ScalarProperty Name="StageName" ColumnName="StageName" />
           <ScalarProperty Name="RequestID" ColumnName="RequestID" />
           <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
           <ScalarProperty Name="EquipmentName" ColumnName="EquipmentName" />
@@ -152,5 +153,13 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="GroupProblem">
+      <EntityTypeMapping TypeName="DBVakulenkoRequests413Model.GroupProblem">
+        <MappingFragment StoreEntitySet="GroupProblem">
+          <ScalarProperty Name="CountProblem" ColumnName="CountProblem" />
+          <ScalarProperty Name="ProblemName" ColumnName="ProblemName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

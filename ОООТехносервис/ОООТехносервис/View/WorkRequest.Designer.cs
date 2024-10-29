@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkRequest));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnBack = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonFixed = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,18 +48,18 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBoxEqeip = new System.Windows.Forms.ComboBox();
+            this.comboBoxEquipment = new System.Windows.Forms.ComboBox();
             this.comboBoxClient = new System.Windows.Forms.ComboBox();
             this.comboBoxMaster = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPriority = new System.Windows.Forms.ComboBox();
             this.comboBoxProblem = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.comboBoxStage = new System.Windows.Forms.ComboBox();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxTime = new System.Windows.Forms.TextBox();
+            this.textBoxComment = new System.Windows.Forms.TextBox();
             this.textBoxNumber = new System.Windows.Forms.TextBox();
-            this.textBoxData = new System.Windows.Forms.TextBox();
+            this.textBoxDate = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,7 +92,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.19906F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnBack, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -124,25 +123,13 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // btnBack
-            // 
-            this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnBack.Location = new System.Drawing.Point(714, 3);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(165, 61);
-            this.btnBack.TabIndex = 2;
-            this.btnBack.Text = "Выход";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.button1, 0, 12);
-            this.tableLayoutPanel3.Controls.Add(this.button2, 1, 12);
+            this.tableLayoutPanel3.Controls.Add(this.buttonFixed, 1, 12);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 2);
@@ -155,18 +142,18 @@
             this.tableLayoutPanel3.Controls.Add(this.label11, 0, 9);
             this.tableLayoutPanel3.Controls.Add(this.label12, 0, 10);
             this.tableLayoutPanel3.Controls.Add(this.label13, 0, 11);
-            this.tableLayoutPanel3.Controls.Add(this.comboBoxEqeip, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxEquipment, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxClient, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxMaster, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.comboBox4, 1, 7);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxPriority, 1, 7);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxProblem, 1, 11);
-            this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxDescription, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxStage, 1, 8);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxStatus, 1, 9);
-            this.tableLayoutPanel3.Controls.Add(this.textBox2, 1, 6);
-            this.tableLayoutPanel3.Controls.Add(this.textBox3, 1, 10);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxTime, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxComment, 1, 10);
             this.tableLayoutPanel3.Controls.Add(this.textBoxNumber, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxData, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxDate, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 76);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -198,15 +185,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // button2
+            // buttonFixed
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(444, 411);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(435, 39);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Зафиксировать";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonFixed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonFixed.Location = new System.Drawing.Point(444, 411);
+            this.buttonFixed.Name = "buttonFixed";
+            this.buttonFixed.Size = new System.Drawing.Size(435, 39);
+            this.buttonFixed.TabIndex = 1;
+            this.buttonFixed.Text = "Зафиксировать";
+            this.buttonFixed.UseVisualStyleBackColor = true;
+            this.buttonFixed.Click += new System.EventHandler(this.buttonFixed_Click);
             // 
             // label2
             // 
@@ -340,18 +328,20 @@
             this.label13.Text = "Проблема";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // comboBoxEqeip
+            // comboBoxEquipment
             // 
-            this.comboBoxEqeip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBoxEqeip.FormattingEnabled = true;
-            this.comboBoxEqeip.Location = new System.Drawing.Point(444, 71);
-            this.comboBoxEqeip.Name = "comboBoxEqeip";
-            this.comboBoxEqeip.Size = new System.Drawing.Size(435, 24);
-            this.comboBoxEqeip.TabIndex = 14;
+            this.comboBoxEquipment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxEquipment.Enabled = false;
+            this.comboBoxEquipment.FormattingEnabled = true;
+            this.comboBoxEquipment.Location = new System.Drawing.Point(444, 71);
+            this.comboBoxEquipment.Name = "comboBoxEquipment";
+            this.comboBoxEquipment.Size = new System.Drawing.Size(435, 24);
+            this.comboBoxEquipment.TabIndex = 14;
             // 
             // comboBoxClient
             // 
             this.comboBoxClient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxClient.Enabled = false;
             this.comboBoxClient.FormattingEnabled = true;
             this.comboBoxClient.Location = new System.Drawing.Point(444, 105);
             this.comboBoxClient.Name = "comboBoxClient";
@@ -361,41 +351,46 @@
             // comboBoxMaster
             // 
             this.comboBoxMaster.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxMaster.Enabled = false;
             this.comboBoxMaster.FormattingEnabled = true;
             this.comboBoxMaster.Location = new System.Drawing.Point(444, 173);
             this.comboBoxMaster.Name = "comboBoxMaster";
             this.comboBoxMaster.Size = new System.Drawing.Size(435, 24);
             this.comboBoxMaster.TabIndex = 16;
             // 
-            // comboBox4
+            // comboBoxPriority
             // 
-            this.comboBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(444, 241);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(435, 24);
-            this.comboBox4.TabIndex = 17;
+            this.comboBoxPriority.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxPriority.Enabled = false;
+            this.comboBoxPriority.FormattingEnabled = true;
+            this.comboBoxPriority.Location = new System.Drawing.Point(444, 241);
+            this.comboBoxPriority.Name = "comboBoxPriority";
+            this.comboBoxPriority.Size = new System.Drawing.Size(435, 24);
+            this.comboBoxPriority.TabIndex = 17;
             // 
             // comboBoxProblem
             // 
             this.comboBoxProblem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxProblem.Enabled = false;
             this.comboBoxProblem.FormattingEnabled = true;
             this.comboBoxProblem.Location = new System.Drawing.Point(444, 377);
             this.comboBoxProblem.Name = "comboBoxProblem";
             this.comboBoxProblem.Size = new System.Drawing.Size(435, 24);
             this.comboBoxProblem.TabIndex = 18;
             // 
-            // textBox1
+            // textBoxDescription
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(444, 139);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(435, 22);
-            this.textBox1.TabIndex = 19;
+            this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDescription.Enabled = false;
+            this.textBoxDescription.Location = new System.Drawing.Point(444, 139);
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.Size = new System.Drawing.Size(435, 22);
+            this.textBoxDescription.TabIndex = 19;
             // 
             // comboBoxStage
             // 
             this.comboBoxStage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxStage.Enabled = false;
             this.comboBoxStage.FormattingEnabled = true;
             this.comboBoxStage.Location = new System.Drawing.Point(444, 275);
             this.comboBoxStage.Name = "comboBoxStage";
@@ -405,43 +400,48 @@
             // comboBoxStatus
             // 
             this.comboBoxStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxStatus.Enabled = false;
             this.comboBoxStatus.FormattingEnabled = true;
             this.comboBoxStatus.Location = new System.Drawing.Point(444, 309);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(435, 24);
             this.comboBoxStatus.TabIndex = 23;
             // 
-            // textBox2
+            // textBoxTime
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(444, 207);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(435, 22);
-            this.textBox2.TabIndex = 24;
+            this.textBoxTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxTime.Enabled = false;
+            this.textBoxTime.Location = new System.Drawing.Point(444, 207);
+            this.textBoxTime.Name = "textBoxTime";
+            this.textBoxTime.Size = new System.Drawing.Size(435, 22);
+            this.textBoxTime.TabIndex = 24;
             // 
-            // textBox3
+            // textBoxComment
             // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Location = new System.Drawing.Point(444, 343);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(435, 22);
-            this.textBox3.TabIndex = 25;
+            this.textBoxComment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxComment.Enabled = false;
+            this.textBoxComment.Location = new System.Drawing.Point(444, 343);
+            this.textBoxComment.Name = "textBoxComment";
+            this.textBoxComment.Size = new System.Drawing.Size(435, 22);
+            this.textBoxComment.TabIndex = 25;
             // 
             // textBoxNumber
             // 
             this.textBoxNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxNumber.Enabled = false;
             this.textBoxNumber.Location = new System.Drawing.Point(444, 3);
             this.textBoxNumber.Name = "textBoxNumber";
             this.textBoxNumber.Size = new System.Drawing.Size(435, 22);
             this.textBoxNumber.TabIndex = 26;
             // 
-            // textBoxData
+            // textBoxDate
             // 
-            this.textBoxData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxData.Location = new System.Drawing.Point(444, 37);
-            this.textBoxData.Name = "textBoxData";
-            this.textBoxData.Size = new System.Drawing.Size(435, 22);
-            this.textBoxData.TabIndex = 27;
+            this.textBoxDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDate.Enabled = false;
+            this.textBoxDate.Location = new System.Drawing.Point(444, 37);
+            this.textBoxDate.Name = "textBoxDate";
+            this.textBoxDate.Size = new System.Drawing.Size(435, 22);
+            this.textBoxDate.TabIndex = 27;
             // 
             // WorkRequest
             // 
@@ -449,9 +449,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 532);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WorkRequest";
             this.Text = "Работа с заявкой";
             this.Load += new System.EventHandler(this.WorkRequest_Load);
+            this.Shown += new System.EventHandler(this.WorkRequest_Shown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -468,10 +470,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonFixed;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -484,17 +485,17 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBoxEqeip;
+        private System.Windows.Forms.ComboBox comboBoxEquipment;
         private System.Windows.Forms.ComboBox comboBoxClient;
         private System.Windows.Forms.ComboBox comboBoxMaster;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBoxPriority;
         private System.Windows.Forms.ComboBox comboBoxProblem;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.ComboBox comboBoxStage;
         private System.Windows.Forms.ComboBox comboBoxStatus;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxTime;
+        private System.Windows.Forms.TextBox textBoxComment;
         private System.Windows.Forms.TextBox textBoxNumber;
-        private System.Windows.Forms.TextBox textBoxData;
+        private System.Windows.Forms.TextBox textBoxDate;
     }
 }

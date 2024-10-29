@@ -33,7 +33,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnBack = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBack = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -120,18 +120,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnBack.Location = new System.Drawing.Point(689, 3);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(157, 71);
-            this.btnBack.TabIndex = 2;
-            this.btnBack.Text = "Выход";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -255,6 +243,7 @@
             this.btnNewReq.TabIndex = 0;
             this.btnNewReq.Text = "Новая заявка";
             this.btnNewReq.UseVisualStyleBackColor = true;
+            this.btnNewReq.Visible = false;
             this.btnNewReq.Click += new System.EventHandler(this.btnNewReq_Click);
             // 
             // btnEditReq
@@ -267,6 +256,7 @@
             this.btnEditReq.TabIndex = 1;
             this.btnEditReq.Text = "Редактировать заявки";
             this.btnEditReq.UseVisualStyleBackColor = true;
+            this.btnEditReq.Visible = false;
             this.btnEditReq.Click += new System.EventHandler(this.btnEditReq_Click);
             // 
             // btnReportReq
@@ -279,6 +269,8 @@
             this.btnReportReq.TabIndex = 2;
             this.btnReportReq.Text = "Отчеты";
             this.btnReportReq.UseVisualStyleBackColor = true;
+            this.btnReportReq.Visible = false;
+            this.btnReportReq.Click += new System.EventHandler(this.btnReportReq_Click);
             // 
             // dataGridListReq
             // 
@@ -359,6 +351,18 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // btnBack
+            // 
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnBack.Location = new System.Drawing.Point(689, 3);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(157, 71);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.Text = "Выход";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // ListRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -390,7 +394,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label2;
@@ -410,5 +413,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.ComboBox comboBoxFilter;
+        private System.Windows.Forms.Button btnBack;
     }
 }

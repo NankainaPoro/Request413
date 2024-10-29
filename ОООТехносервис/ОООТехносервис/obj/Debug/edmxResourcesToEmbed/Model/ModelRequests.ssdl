@@ -80,6 +80,15 @@
     <Property Name="UserRoleID" Type="int" Nullable="false" />
   </EntityType>
   <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "DBVakulenkoRequests413.dbo.GroupProblem" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="GroupProblem">
+    <Key>
+      <PropertyRef Name="ProblemName" />
+    </Key>
+    <Property Name="ProblemName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CountProblem" Type="int" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "DBVakulenkoRequests413.dbo.Request_View" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
   <EntityType Name="Request_View">
     <Key>
@@ -92,6 +101,7 @@
       <PropertyRef Name="Master" />
       <PropertyRef Name="RequestTime" />
       <PropertyRef Name="PriorityName" />
+      <PropertyRef Name="StageName" />
     </Key>
     <Property Name="RequestID" Type="int" Nullable="false" />
     <Property Name="RequestDate" Type="date" Nullable="false" />
@@ -104,6 +114,7 @@
     <Property Name="RequestTime" Type="int" Nullable="false" />
     <Property Name="RequestComment" Type="nvarchar(max)" />
     <Property Name="PriorityName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StageName" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Association Name="FK_Request_Equipment">
     <End Role="Equipment" Type="Self.Equipment" Multiplicity="1" />
@@ -217,6 +228,12 @@
     <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupProblem" EntityType="Self.GroupProblem" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [GroupProblem].[ProblemName] AS [ProblemName], 
+    [GroupProblem].[CountProblem] AS [CountProblem]
+    FROM [dbo].[GroupProblem] AS [GroupProblem]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="Request_View" EntityType="Self.Request_View" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [Request_View].[RequestID] AS [RequestID], 
@@ -229,7 +246,8 @@
     [Request_View].[Master] AS [Master], 
     [Request_View].[RequestTime] AS [RequestTime], 
     [Request_View].[RequestComment] AS [RequestComment], 
-    [Request_View].[PriorityName] AS [PriorityName]
+    [Request_View].[PriorityName] AS [PriorityName], 
+    [Request_View].[StageName] AS [StageName]
     FROM [dbo].[Request_View] AS [Request_View]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_Request_Equipment" Association="Self.FK_Request_Equipment">

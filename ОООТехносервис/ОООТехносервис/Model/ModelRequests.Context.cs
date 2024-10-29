@@ -37,6 +37,7 @@ namespace ОООТехносервис.Model
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Request_View> Request_View { get; set; }
+        public virtual DbSet<GroupProblem> GroupProblem { get; set; }
     
         public virtual ObjectResult<GetRequestMasterName_Result> GetRequestMasterName(string nameMaster)
         {

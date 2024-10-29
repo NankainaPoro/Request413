@@ -12,19 +12,9 @@ namespace ОООТехносервис.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Request_View
+    public partial class GroupProblem
     {
-        public int RequestID { get; set; }
-        public System.DateTime RequestDate { get; set; }
-        public string EquipmentName { get; set; }
         public string ProblemName { get; set; }
-        public string Client { get; set; }
-        public string RequestDescription { get; set; }
-        public string StatusName { get; set; }
-        public string Master { get; set; }
-        public int RequestTime { get; set; }
-        public string RequestComment { get; set; }
-        public string PriorityName { get; set; }
-        public string StageName { get; set; }
+        public Nullable<int> CountProblem { get; set; }
     }
 }

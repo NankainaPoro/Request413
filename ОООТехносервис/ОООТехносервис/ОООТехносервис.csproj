@@ -65,10 +65,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Helper.cs" />
+    <Compile Include="DBVakulenkoRequests413DataSet.cs">
+      <DependentUpon>DBVakulenkoRequests413DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DBVakulenkoRequests413DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBVakulenkoRequests413DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GroupProblem.cs">
+      <DependentUpon>ModelRequests.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Authorization.cs">
       <SubType>Form</SubType>
@@ -135,6 +141,12 @@
     <Compile Include="View\ListRequests.Designer.cs">
       <DependentUpon>ListRequests.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ReportRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReportRequest.Designer.cs">
+      <DependentUpon>ReportRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\WorkRequest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ListRequests.resx">
       <DependentUpon>ListRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReportRequest.resx">
+      <DependentUpon>ReportRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\WorkRequest.resx">
       <DependentUpon>WorkRequest.cs</DependentUpon>

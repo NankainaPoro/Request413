@@ -92,14 +92,16 @@ namespace ОООТехносервис.View
 
             switch (Helper.user.UserRoleID)
             {
-                case 2:
-                    btnEditReq.Visible = true;
+                case 1:
                     break;
-                case 3:
+                case 2:
                     btnEditReq.Visible = btnNewReq.Visible = true;
                     break;
+                case 3:
+                    btnEditReq.Visible = true;
+                    break;
                 case 4:
-                    btnEditReq.Visible = btnReportReq.Visible = true;
+                    btnReportReq.Visible = true;
                     break;
             }
 
@@ -145,11 +147,12 @@ namespace ОООТехносервис.View
         /// <param name="e"></param>
         private void btnNewReq_Click(object sender, EventArgs e)
         {
-            View.WorkRequest workRequest = new View.WorkRequest(0);
+            View.WorkRequest workRequest = new View.WorkRequest(0, 0); // передаем 0 для ID новой заявки
             Hide();
             workRequest.ShowDialog();
             Show();
         }
+
 
         /// <summary>
         /// Редактирование заявки
@@ -158,13 +161,21 @@ namespace ОООТехносервис.View
         /// <param name="e"></param>
         private void btnEditReq_Click(object sender, EventArgs e)
         {
-            int selectRow = Convert.ToInt32(dataGridListReq.CurrentRow.Cells[0].Value);
-            MessageBox.Show("Номер выбранной заявки: " + selectRow);
-            int selectNumber = selectRow;
+            int selectedRow = Convert.ToInt32(dataGridListReq.CurrentRow.Cells[0].Value);
+            MessageBox.Show("Номер выбранной заявки: " + selectedRow);
 
-            View.WorkRequest workRequest = new View.WorkRequest(selectNumber);
+            View.WorkRequest workRequest = new View.WorkRequest(Helper.user.Role.RoleID, selectedRow); // Передаем режим и ID заявки
             Hide();
             workRequest.ShowDialog();
+            Show();
+        }
+
+
+        private void btnReportReq_Click(object sender, EventArgs e)
+        {
+            View.ReportRequest reportRequest = new View.ReportRequest();
+            Hide();
+            reportRequest.ShowDialog();
             Show();
         }
     }

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ОООТехносервис.Classes;
 
@@ -16,25 +11,65 @@ namespace ОООТехносервис
         public Authorization()
         {
             InitializeComponent();
-            //Устанвока связи с БД
+
+            // Установка связи с БД
             try
             {
                 Helper.DB = new Model.DBVakulenkoRequests413Entities();
-                MessageBox.Show("Связь с БД установлена");
+                CustomMessageBox.Show("Связь с БД установлена", "Успех");
             }
-            catch 
+            catch
             {
-                MessageBox.Show("Связь с БД не установлена");
-            } 
-           
-           
+                CustomMessageBox.Show("Связь с БД не установлена", "Ошибка");
+            }
         }
+
+        /// <summary>
+        /// Кастомный MessageBox для отображения сообщений
+        /// </summary>
+        //private void ShowCustomMessageBox(string message, string title)
+        //{
+        //    Form messageBoxForm = new Form()
+        //    {
+        //        Width = 400,
+        //        Height = 200,
+        //        FormBorderStyle = FormBorderStyle.FixedDialog,
+        //        Text = title,
+        //        StartPosition = FormStartPosition.CenterScreen,
+        //        Icon = this.Icon  // Использует иконку формы Authorization
+        //    };
+
+        //    Label labelMessage = new Label()
+        //    {
+        //        Left = 50,
+        //        Top = 30,
+        //        Width = 300,
+        //        Height = 50,
+        //        Text = message,
+        //        Font = new Font("Segoe UI", 10, FontStyle.Regular),
+        //        TextAlign = ContentAlignment.MiddleCenter
+        //    };
+
+        //    Button buttonOk = new Button()
+        //    {
+        //        Text = "OK",
+        //        Left = 150,
+        //        Width = 100,
+        //        Top = 100,
+        //        DialogResult = DialogResult.OK,
+        //        Font = new Font("Segoe UI", 9, FontStyle.Regular)
+        //    };
+        //    buttonOk.Click += (sender, e) => { messageBoxForm.Close(); };
+
+        //    messageBoxForm.Controls.Add(labelMessage);
+        //    messageBoxForm.Controls.Add(buttonOk);
+        //    messageBoxForm.AcceptButton = buttonOk;
+        //    messageBoxForm.ShowDialog();
+        //}
+
         /// <summary>
         /// Завершение приложения
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
@@ -42,25 +77,23 @@ namespace ОООТехносервис
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            //Вход в систему
-            //string login = textBoxLogin.Text;
-            //string password = textBoxPassword.Text;
-            //List<Model.User> users = Helper.DB.User.ToList();
-            //users.Where(u => u.UserLogin == login && u.UserPassword == password).ToList();
-            Helper.user = Helper.DB.User.Where(u => u.UserLogin == textBoxLogin.Text && u.UserPassword == textBoxPassword.Text).FirstOrDefault();
+            // Вход в систему
+            Helper.user = Helper.DB.User.FirstOrDefault(u =>
+                u.UserLogin == textBoxLogin.Text && u.UserPassword == textBoxPassword.Text);
+
             if (Helper.user != null)
             {
-                MessageBox.Show(Helper.user.UserFullName + ", вы вошли с ролью " + Helper.user.Role.RoleName);
+                CustomMessageBox.Show($"{Helper.user.UserFullName}, вы вошли с ролью {Helper.user.Role.RoleName}", "Успех");
 
-                //Создание объекта окна заявок и переход к нему
+                // Переход к окну заявок
                 View.ListRequests listRequests = new View.ListRequests();
                 Hide();
                 listRequests.ShowDialog();
                 Show();
             }
-            else 
+            else
             {
-                MessageBox.Show("Пользователь не найден");
+                CustomMessageBox.Show("Пользователь не найден", "Ошибка");
             }
         }
 
